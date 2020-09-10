@@ -6,15 +6,21 @@ function checkEmployeeAttendance() {
     var attendanceStatus = Math.floor(Math.random() * 10) % 3;
     var employeeWorkingHours;
 
-    if (attendanceStatus == IS_PART_TIME) {
-        console.log("Employee is PART TIME!");
-        employeeWorkingHours = 4
-    } else if (attendanceStatus == IS_FULL_TIME) {
-        console.log("Employee is FULL TIME!");
-        employeeWorkingHours = 8;
-    } else {
-        console.log("Employee is ABSENT!");
-        employeeWorkingHours = 0;
+    switch (attendanceStatus) {
+        case IS_PART_TIME:
+            console.log("Employee is PART TIME!");
+            employeeWorkingHours = 4;
+            break;
+
+        case IS_FULL_TIME:
+            console.log("Employee is FULL TIME");
+            employeeWorkingHours = 8;
+            break;
+
+        default:
+            console.log("Employee is ABSENT!");
+            employeeWorkingHours = 0;
+            break;
     }
 
     return employeeWorkingHours;
