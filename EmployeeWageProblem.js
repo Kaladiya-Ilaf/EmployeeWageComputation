@@ -30,11 +30,14 @@ function checkEmployeeAttendance() {
 function calculateEmployeeWage(workHours) {
     return WAGE_PER_HOUR * workHours;
 }
-
+day = 0;
 totalWage = 0;
-for (day = 1; day <= NUM_OF_WORKING_DAYS; day++) {
+
+while (day < NUM_OF_WORKING_DAYS) {
     workingHours = checkEmployeeAttendance();
     dailyWage = calculateEmployeeWage(workingHours)
-    totalWage = totalWage + dailyWage;
+    totalWage += dailyWage;
+    day += 1;
 }
+
 console.log(`Wage : ${totalWage}`);
