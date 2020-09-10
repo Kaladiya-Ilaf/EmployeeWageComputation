@@ -10,17 +10,16 @@ function checkEmployeeAttendance() {
 
     switch (attendanceStatus) {
         case IS_PART_TIME:
-            console.log("Employee is PART TIME!");
             employeeWorkingHours = 4;
             break;
 
         case IS_FULL_TIME:
-            console.log("Employee is FULL TIME!");
+
             employeeWorkingHours = 8;
             break;
 
         default:
-            console.log("Employee is ABSENT!");
+
             employeeWorkingHours = 0;
             break;
     }
@@ -44,4 +43,5 @@ while (days < NUM_OF_WORKING_DAYS && totalWorkingHours <= MAXIMUM_WORKING_HOURS)
     days += 1;
 }
 
+console.log(`Total working hours : ${totalWorkingHours}`);
 console.log(`Wage : ${totalWage}`);
