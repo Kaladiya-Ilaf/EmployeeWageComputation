@@ -2,6 +2,7 @@ const IS_FULL_TIME = 1;
 const IS_PART_TIME = 2;
 const WAGE_PER_HOUR = 20;
 const NUM_OF_WORKING_DAYS = 20;
+const MAXIMUM_WORKING_HOURS = 100;
 
 function checkEmployeeAttendance() {
     var attendanceStatus = Math.floor(Math.random() * 10) % 3;
@@ -30,14 +31,17 @@ function checkEmployeeAttendance() {
 function calculateEmployeeWage(workHours) {
     return WAGE_PER_HOUR * workHours;
 }
-day = 0;
-totalWage = 0;
 
-while (day < NUM_OF_WORKING_DAYS) {
+days = 0;
+totalWage = 0;
+totalWorkingHours = 0;
+
+while (days < NUM_OF_WORKING_DAYS && totalWorkingHours <= MAXIMUM_WORKING_HOURS) {
     workingHours = checkEmployeeAttendance();
+    totalWorkingHours += workingHours;
     dailyWage = calculateEmployeeWage(workingHours)
     totalWage += dailyWage;
-    day += 1;
+    days += 1;
 }
 
 console.log(`Wage : ${totalWage}`);
