@@ -21,4 +21,4 @@ function calculateEmployeeWage(workHours) {
 
 workingHours = checkEmployeeAttendance();
 dailyWage = calculateEmployeeWage(workingHours)
-console.log("Wage : " + dailyWage);
+console.log(`Wage : ${dailyWage}`);
