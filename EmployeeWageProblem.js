@@ -4,6 +4,8 @@ const WAGE_PER_HOUR = 20;
 const NUM_OF_WORKING_DAYS = 20;
 const MAXIMUM_WORKING_HOURS = 100;
 
+var employeeDailyWage = new Array();
+
 function checkEmployeeAttendance() {
     var attendanceStatus = Math.floor(Math.random() * 10) % 3;
     var employeeWorkingHours;
@@ -14,12 +16,10 @@ function checkEmployeeAttendance() {
             break;
 
         case IS_FULL_TIME:
-
             employeeWorkingHours = 8;
             break;
 
         default:
-
             employeeWorkingHours = 0;
             break;
     }
@@ -39,9 +39,10 @@ while (days < NUM_OF_WORKING_DAYS && totalWorkingHours <= MAXIMUM_WORKING_HOURS)
     workingHours = checkEmployeeAttendance();
     totalWorkingHours += workingHours;
     dailyWage = calculateEmployeeWage(workingHours)
+    employeeDailyWage.push(dailyWage);
     totalWage += dailyWage;
     days += 1;
 }
-
+employeeDailyWage.forEach(element => console.log(element));
 console.log(`Total working hours : ${totalWorkingHours}`);
 console.log(`Wage : ${totalWage}`);
