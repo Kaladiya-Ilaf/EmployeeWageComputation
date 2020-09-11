@@ -1,9 +1,10 @@
+//Constants
 const IS_FULL_TIME = 1;
 const IS_PART_TIME = 2;
 const WAGE_PER_HOUR = 20;
 const NUM_OF_WORKING_DAYS = 20;
 const MAXIMUM_WORKING_HOURS = 100;
-
+//variable
 var days = 0, totalWage = 0, totalWorkingHours = 0;
 var employeeDailyWage = new Array();
 
